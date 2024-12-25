@@ -1,0 +1,265 @@
+/* A minimalist CSS reset */
+html {
+    box-sizing: border-box;
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  /* Global styles */
+  body {
+    margin: 1rem;
+    font-family: 'Arial', sans-serif; /* Define a fallback font */
+    line-height: 1.5;
+    background-color: #e7ebef; /* Soft background for better readability */
+    color: #333; /* Standard text color for good contrast */
+  }
+  
+  /* Media elements */
+  img,
+  video {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Fixed navbar */
+  .fixed_part {
+    background-color: #dde3e7;
+    z-index: 1030; /* Ensures navbar stays on top */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  }
+  
+  /* Container 1 - Hero Section */
+  .container1 {
+    height: 50vh;
+    position: fixed;
+    top: 56px; /* Adjust to avoid overlapping with navbar */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-image: 
+      url('images/bg_img.png'),
+      url('images/background_img_lg.png');
+    background-repeat: repeat, no-repeat;
+    background-size: 10px 10px, 80% 80%;
+    background-position: left top, right bottom;
+    background-color: #dee4e8; /* Adds a fallback background color */
+  }
+  
+  /* Container 2 - Scrollable Section */
+  .container2 {
+    background-color: #e7ebef;
+    position: relative;
+    z-index: 2; /* Ensures it's above container1 */
+    margin-top: 50vh; /* Aligns with container1 height */
+    padding: 1rem;
+  }
+  
+  /* Logo styling */
+  .logo {
+    width: 20vh;
+    display: block;
+    margin: 0 auto; /* Centers logo */
+  }
+  
+  /* Tech tag styles */
+  .tech_tag {
+    background-color: #283593;
+    color: #ffffff;
+    padding: 4px 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 11px;
+  }
+  
+  /* Image card styles */
+  .card.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add some space between cards */
+  }
+  
+  .project-card .card-img-left {
+    width: 30%; /* Adjust the width of the image */
+    height: 330px; /* Fix the height for all images */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflow if the image is too large */
+  }
+  
+  .project-card .card-body {
+    width: 70%;
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  
+  .card .btn {
+    margin-top: 10px;
+  }
+  
+  /* Card paragraph styles */
+  .card_p {
+    margin: 1rem 0;
+    color: #555; /* Softer text color for descriptions */
+  }
+  
+  /* Tech div styles */
+  .tech_div {
+    height: 4rem;
+    display: flex;
+    flex-wrap: wrap; /* Ensures tags wrap nicely */
+    align-items: center;
+    gap: 4px; /* Adds spacing between tags */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container1 {
+      height: 60vh; /* Adjust height for smaller screens */
+      padding: 10px;
+    }
+  
+    .fixed_part {
+      top: 0;
+    }
+  
+    .card.flex-row {
+      flex-direction: column;
+    }
+  
+    .card-img-left {
+      width: 100%;
+      height: 200px; /* Keep image height consistent */
+      /* object-fit: cover; */
+      overflow: hidden;
+    }
+  
+    .card-body {
+      width: 100%;
+    }
+  
+    .card_img {
+      height: 10rem; /* Smaller images for smaller screens */
+    }
+  
+    .tech_tag {
+      font-size: 10px; /* Adjust font size for better fit */
+    }
+  }
+  
+
+/* Card layout adjustments for small screens */
+@media (max-width: 768px) {
+  /* For project cards, stack image above the content */
+  .project-card {
+    display: flex !important; /* Ensure content and image are stacked */
+    flex-direction: column !important; /* Stack the image and content vertically */
+
+  }
+
+  .project-card .card-body {
+    padding: 1rem; /* Adjust padding for small screens */
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Space between image and text */
+  }
+
+  /* Ensure image takes full width on small screens */
+  .project-card .card-img-left {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Space between image and text */
+  }
+
+  /* Optional: Adjust font sizes for small screens */
+  .project-card .card-title {
+    font-size: 1.2rem;
+  }
+
+  .project-card .card-text {
+    font-size: 1rem;
+  }
+
+  /* Optional: Adjust tech tags to fit better on small screens */
+  .project-card .tech_tag {
+    font-size: 10px;
+    margin-right: 3px;
+    margin-top: 4px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* Common styles for all social media links */
+.social-link {
+  text-decoration: none; /* Removes underline from the links */
+  display: inline-block; /* Makes sure icons are aligned */
+  margin: 0 10px; /* Adds spacing between icons */
+}
+
+/* GitHub Icon Styling */
+.github-link i {
+  font-size: 24px; /* Adjust icon size */
+  color: #333; /* GitHub default color (dark gray) */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.github-link:hover i {
+  color: #6e5494; /* GitHub purple color on hover */
+}
+
+/* LinkedIn Icon Styling */
+.linkedin-link i {
+  font-size: 24px; /* Adjust icon size */
+  color: #0077b5; /* LinkedIn default color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.linkedin-link:hover i {
+  color: #0a66c2; /* LinkedIn blue color on hover */
+}
+.email-link {
+  text-decoration: none; /* Removes underline from the link */
+}
+
+.email-link i {
+  font-size: 24px; /* Adjust the icon size */
+  color: #9a1e12; /* Example color - change to whatever you prefer */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.email-link:hover i {
+  color: #ff2c07; /* Color on hover */
+}
